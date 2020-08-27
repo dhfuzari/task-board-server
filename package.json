@@ -1,0 +1,23 @@
+{
+  "name": "api-nodejs-express-mongo",
+  "version": "1.0.0",
+  "description": "A NodeJS and Express Crud Api with MongoDB Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhfuzari/api-nodejs-express-mongo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhfuzari/api-nodejs-express-mongo/issues"
+  },
+  "homepage": "https://github.com/dhfuzari/api-nodejs-express-mongo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
