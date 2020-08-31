@@ -2,7 +2,16 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/noderest', { useMongoClient: true});
 mongoose.Promise = global.Promise;
+
+const mongoUri = 'mongodb://localhost:27017/api_nodejs_express_mongo';
+const mongoOptions = {
+    auth: { "authSource": "admin" },
+    user: "root",
+    pass: "example",
+    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+};
+
+mongoose.connect(mongoUri, mongoOptions);
 
 module.exports = mongoose
