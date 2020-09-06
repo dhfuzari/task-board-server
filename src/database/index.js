@@ -9,7 +9,7 @@ const mongoOptions = {
     auth: { "authSource": "admin" },
     user: "root",
     pass: "example",
-    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 };
 
 mongoose.connect(mongoUri, mongoOptions);
