@@ -45,7 +45,9 @@ router.put('/:projectId', async (req, res) => {
 
 router.delete('/:projectId', async (req, res) => {
     try {
-        res.status(200).send({ userId: req.userId });
+        const { projectId } = req.params;
+        const project = await Project.findByIdAndRemove(projectId);
+        res.status(200).send({ message: `Project ${projectId} removed` });
     } catch(err) {
         return res.status(400).send({ error: 'Error' })
     }
