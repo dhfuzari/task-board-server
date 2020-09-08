@@ -72,7 +72,7 @@ router.post('/forgot_password', async (req, res) => {
         });
 
         mailer.sendMail({
-            from: '"Task Board Crud Api 👻" <foo@example.com>',
+            from: '"Task Board Crud Api 👻" <email@example.com>',
             to: email,
             subject: "Hello ✔",
             template: 'auth/forgot-password',

@@ -1,3 +1,4 @@
 1- Choose a better name to project
 1- Improve forgot password email template
-2- Create complete README file including: insominia collection, smtp server configs.
+2- Create complete README file including: insominia collection, smtp server configs, docker images
+containers
