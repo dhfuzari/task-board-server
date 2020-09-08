@@ -1,5 +1,5 @@
 {
-  "name": "api-nodejs-express-mongo",
+  "name": "task-board-crud-api",
   "version": "1.0.0",
   "description": "A NodeJS and Express Crud Api with MongoDB Database",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhfuzari/api-nodejs-express-mongo.git"
+    "url": "git+https://github.com/dhfuzari/task-board-crud-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dhfuzari/api-nodejs-express-mongo/issues"
+    "url": "https://github.com/dhfuzari/task-board-crud-api/issues"
   },
-  "homepage": "https://github.com/dhfuzari/api-nodejs-express-mongo#readme",
+  "homepage": "https://github.com/dhfuzari/task-board-crud-api#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
