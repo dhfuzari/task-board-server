@@ -2,8 +2,9 @@
   "name": "task-board-crud-api",
   "version": "1.0.0",
   "description": "A NodeJS and Express Crud Api with MongoDB Database",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
+    "dev": "docker-compose up -d && nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +28,8 @@
     "nodemailer": "^6.4.11",
     "nodemailer-express-handlebars": "^4.0.0",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
