@@ -1,4 +1,5 @@
 1- Choose a better name to project
-1- Improve forgot password email template
-2- Create complete README file including: insominia collection, smtp server configs, docker images
+2- Improve forgot password email template
+3- Create complete README file including: insominia collection, smtp server configs, docker images
+4- Add nodemon package to run the project locally
 containers
