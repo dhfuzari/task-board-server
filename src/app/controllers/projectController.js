@@ -9,7 +9,7 @@ router.use(authMiddleware);
 
 router.get('/', async (req, res) => {
     try {
-        const projects = await Project.find().populate('user'); // populate method returns the full 'user' object
+        const projects = await Project.find().populate('user'); // "Populate" method loads the project and all it's users relationships(eager loading)
         return res.status(200).send({ projects });
     } catch(err) {
         return res.status(400).send({ error: 'Error loading projects list' })
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:projectId', async (req, res) => {
     try {
-        const project = await Project.findById(req.params.projectId).populate(['user', 'tasks']);
+        const project = await Project.findById(req.params.projectId).populate(['user', 'tasks']); // eager loading user and tasks
         res.status(200).send({ project });
     } catch(err) {
         return res.status(400).send({ error: 'Error loading project by Id' })
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
         const project = await Project.create({ title, description, user: req.userId });
 
         await Promise.all(tasks.map(async task => {
-            const projectTask = new Task({ ...task, project: project._id});
+            const projectTask = new Task({ ...task, project: project._id}); // "new Task()" is an alternative syntax to Task.create(). It creates a new Task but it doesn't save it.
             await projectTask.save();
             project.tasks.push(projectTask);
         }));
