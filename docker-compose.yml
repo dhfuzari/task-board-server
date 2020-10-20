@@ -3,6 +3,7 @@ version: '3.1'
 
 services:
   mongo:
+    container_name: task-board-server-mongo
     image: mongo
     ports:
       - 27017:27017
@@ -10,6 +11,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
   mongo-express:
+    container_name: task-board-server-mongo-express
     image: mongo-express
     ports:
       - 8081:8081
