@@ -1,5 +1,3 @@
-1- Choose a better name to project
 2- Improve forgot password email template
-3- Create complete README file including: insominia collection, smtp server configs, docker images
-4- Add nodemon package to run the project locally
 5- Create an route called /health and addedt it to Up and runnning section as a seventh step
+6-Create swagger docs routes to explain each endpoint and explain this in the section "How to use", in the step number 11
