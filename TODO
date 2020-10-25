@@ -1,3 +1,3 @@
 2- Improve forgot password email template
 5- Create an route called /health and addedt it to Up and runnning section as a seventh step
-6-Create swagger docs routes to explain each endpoint and explain this in the section "How to use", in the step number 11
+7- Remoove mailtrap credentials when finish all tests

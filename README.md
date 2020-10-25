@@ -1,5 +1,5 @@
 ## Task Board Server
-A NodeJS and Express Api to create, retrieve, update and delete tasks and projects. It performers user authentication trought JSON Web Tokens and functionalities to register users and reset passwords. It uses MongoDB to store data, 
+A NodeJS and Express Api to create, retrieve, update and delete tasks and projects. It performers user authentication trought JSON Web Tokens and functionalities to register users and reset passwords.
  
 ## Tech used
 - [Docker](https://docker.com/)
@@ -15,7 +15,7 @@ A NodeJS and Express Api to create, retrieve, update and delete tasks and projec
 
 ## Features
 
-1. CRUD operations for tasks and projects entities
+1. CRUD operations for Tasks and Projects entities
 
 2. User authentication with JSON Web Tokens. Functionalities:
     - User register
