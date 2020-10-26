@@ -1,11 +1,17 @@
 ## Task Board Server
 A NodeJS and Express Api to create, retrieve, update and delete tasks and projects. It performers user authentication trought JSON Web Tokens and functionalities to register users and reset passwords.
 
+![GitHub last commit](https://img.shields.io/github/last-commit/dhfuzari/task-board-server)
+![GitHub issues](https://img.shields.io/github/issues/dhfuzari/task-board-server)
+![GitHub](https://img.shields.io/github/license/dhfuzari/task-board-server)  
+  
+
 <div>
   <img src="./assets/img/task-board-server-screen.PNG" alt="Postman Task Board Server public documentation" width="768">
   <br>
-</div>
- 
+</div>  
+  
+
 ## Tech used
 - [Docker](https://docker.com/)
 - [Mailtrap](https://mailtrap.io/)
