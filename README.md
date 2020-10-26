@@ -1,6 +1,17 @@
 ## Task Board Server
-A NodeJS and Express Api to create, retrieve, update and delete tasks and projects. It performers user authentication trought JSON Web Tokens and functionalities to register users and reset passwords. It uses MongoDB to store data, 
- 
+A NodeJS and Express Api to create, retrieve, update and delete tasks and projects. It performers user authentication trought JSON Web Tokens and functionalities to register users and reset passwords.
+
+![GitHub last commit](https://img.shields.io/github/last-commit/dhfuzari/task-board-server)
+![GitHub issues](https://img.shields.io/github/issues/dhfuzari/task-board-server)
+![GitHub](https://img.shields.io/github/license/dhfuzari/task-board-server)  
+  
+
+<div>
+  <img src="./assets/img/task-board-server-screen.PNG" alt="Postman Task Board Server public documentation" width="768">
+  <br>
+</div>  
+  
+
 ## Tech used
 - [Docker](https://docker.com/)
 - [Mailtrap](https://mailtrap.io/)
@@ -11,11 +22,10 @@ A NodeJS and Express Api to create, retrieve, update and delete tasks and projec
 - [Mongoose](https://mongoosejs.com/)
 - [JSON Web Tokens](https://jwt.io/)
 - [Node Mailer](https://nodemailer.com/about/)
-- [Swagger](https://swagger.io/)
 
 ## Features
 
-1. CRUD operations for tasks and projects entities
+1. CRUD operations for Tasks and Projects entities
 
 2. User authentication with JSON Web Tokens. Functionalities:
     - User register
@@ -23,7 +33,7 @@ A NodeJS and Express Api to create, retrieve, update and delete tasks and projec
     - Forgot Password
     - Reset Password
 
-This project provides a complete feature to reset passwords throught `/auth/forgot_password` endponits wich sends an email to the current user containing a token, that will be used later on `/auth/reset_password` endpoint to validate the user action to reset the password. More details can be found at [swagger project documentation]() 
+This project provides a complete feature to reset passwords throught `/auth/forgot_password` endponits wich sends an email to the current user containing a token, that will be used later on `/auth/reset_password` endpoint to validate the user action to reset the password. More details can be found at [Postman Task Board Server public documentation](https://documenter.getpostman.com/view/2364800/TVYDdKDv)
 
 ## Up and running
 To get a development env running, follow these next steps, and next continue to How to use section to have a complete developement environment running:
