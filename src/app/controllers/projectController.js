@@ -29,12 +29,13 @@ router.post('/', async (req, res) => {
     try {
         const { title, description, tasks } = req.body;
         const project = await Project.create({ title, description, user: req.userId });
-
-        await Promise.all(tasks.map(async task => {
-            const projectTask = new Task({ ...task, project: project._id}); // "new Task()" is an alternative syntax to Task.create(). It creates a new Task but it doesn't save it.
-            await projectTask.save();
-            project.tasks.push(projectTask);
-        }));
+        if(Array.isArray(tasks)) { 
+            await Promise.all(tasks.map(async task => {
+                const projectTask = new Task({ ...task, project: project._id}); // "new Task()" is an alternative syntax to Task.create(). It creates a new Task but it doesn't save it.
+                await projectTask.save();
+                project.tasks.push(projectTask);
+            }));
+        }
         await project.save();
         return res.status(200).send({ project });
     } catch(err) {
