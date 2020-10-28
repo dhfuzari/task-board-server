@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         const projects = await Project.find().populate('user'); // "Populate" method loads the project and all it's users relationships(eager loading)
         return res.status(200).send({ projects });
     } catch(err) {
-        return res.status(400).send({ error: 'Error loading projects list' })
+        return res.status(400).send({ error: 'Error loading projects list' });
     }
 });
 
@@ -21,7 +21,7 @@ router.get('/:projectId', async (req, res) => {
         const project = await Project.findById(req.params.projectId).populate(['user', 'tasks']); // eager loading user and tasks
         res.status(200).send({ project });
     } catch(err) {
-        return res.status(400).send({ error: 'Error loading project by Id' })
+        return res.status(400).send({ error: 'Error loading project by Id' });
     }
 });
 
@@ -38,8 +38,8 @@ router.post('/', async (req, res) => {
         await project.save();
         return res.status(200).send({ project });
     } catch(err) {
-        console.log(err)
-        return res.status(400).send({ error: 'Error creating new project' })
+        console.log(err);
+        return res.status(400).send({ error: 'Error creating new project' });
     }
 })
 
@@ -63,8 +63,8 @@ router.put('/:projectId', async (req, res) => {
         await project.save();
         return res.status(200).send({ project });
     } catch(err) {
-        console.log(err)
-        return res.status(400).send({ error: 'Error updating new project' })
+        console.log(err);
+        return res.status(400).send({ error: 'Error updating new project' });
     }
 });
 
@@ -74,7 +74,7 @@ router.delete('/:projectId', async (req, res) => {
         const project = await Project.findByIdAndRemove(projectId);
         res.status(200).send({ message: `Project ${projectId} removed` });
     } catch(err) {
-        return res.status(400).send({ error: 'Error' })
+        return res.status(400).send({ error: 'Error' });
     }
 });
 
