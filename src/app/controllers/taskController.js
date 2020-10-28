@@ -56,4 +56,19 @@ router.put('/:taskId', async (req, res) => {
     }
 });
 
+router.delete('/:taskId', async (req, res) => {
+    try {
+        const { taskId } = req.params;
+        const deletedDataTask = await Task.findByIdAndRemove(taskId);
+        const project = await Project.findById(deletedDataTask.project._id);
+        const updatedTasksCollection = project.tasks.filter((task) => task.toString() !== taskId);
+        project.tasks = [...updatedTasksCollection];
+        await project.save();
+
+        res.status(200).send({ message: `Task ${taskId} removed` });
+    } catch(err) {
+        return res.status(400).send({ error: 'Error' })
+    }
+});
+
 module.exports = app => app.use('/tasks', router);
