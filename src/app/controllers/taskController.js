@@ -25,4 +25,20 @@ router.get('/:taskId', async (req, res) => {
     }
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const { title, project, assignedTo } = req.body;
+        const task = new Task({ title, project, assignedTo: req.userId });
+        await task.save();
+        const projectModel = await Project.findById(project);
+        projectModel.tasks.push(task)
+        await projectModel.save();
+
+        return res.status(200).send({ task });
+    } catch(err) {
+        console.log(err);
+        return res.status(400).send({ error: 'Error creating new task' });
+    }
+})
+
 module.exports = app => app.use('/tasks', router);
