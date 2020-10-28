@@ -39,6 +39,21 @@ router.post('/', async (req, res) => {
         console.log(err);
         return res.status(400).send({ error: 'Error creating new task' });
     }
-})
+});
+
+router.put('/:taskId', async (req, res) => {
+    try {
+        const { title, assignedTo, completed } = req.body;
+        const task = await Task.findByIdAndUpdate(req.params.taskId, { 
+            title,
+            assignedTo, 
+            completed
+        }, { new: true }); // "{ new: true }" config param returns the new object updated by fundByIdAndUpdate function
+        return res.status(200).send({ task });
+    } catch(err) {
+        console.log(err)
+        return res.status(400).send({ error: 'Error updating existing task' });
+    }
+});
 
 module.exports = app => app.use('/tasks', router);

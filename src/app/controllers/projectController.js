@@ -65,7 +65,7 @@ router.put('/:projectId', async (req, res) => {
         return res.status(200).send({ project });
     } catch(err) {
         console.log(err);
-        return res.status(400).send({ error: 'Error updating new project' });
+        return res.status(400).send({ error: 'Error updating existing project' });
     }
 });
 
