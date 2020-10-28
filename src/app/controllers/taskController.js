@@ -16,4 +16,13 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:taskId', async (req, res) => {
+    try {
+        const task = await Task.findById(req.params.taskId).populate(['assignedTo', 'project']); // eager loading assignedTo and project
+        res.status(200).send({ task });
+    } catch(err) {
+        return res.status(400).send({ error: 'Error loading task by Id' });
+    }
+});
+
 module.exports = app => app.use('/tasks', router);
