@@ -11,7 +11,10 @@
         "ecmaVersion": 12
     },
     "rules": {
-      "global-require": "off",
-      "import/no-dynamic-require": "off"
+      "global-require": 1,
+      "import/no-dynamic-require": 1,
+      "no-underscore-dangle": 1,
+      "no-console": 1,
+      "consistent-return": 1
     }
 }
