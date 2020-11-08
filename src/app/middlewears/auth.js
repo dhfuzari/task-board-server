@@ -1,26 +1,26 @@
-const jwt = require("jsonwebtoken");
-const authConfig = require("../../config/auth.json")
+const jwt = require('jsonwebtoken');
+const authConfig = require('../../config/auth.json');
 
 module.exports = (req, res, next) => {
-    const authHeader = req.headers.authorization;
+  const authHeader = req.headers.authorization;
 
-    if(!authHeader) // Check if Authorization header exists
-        return res.status(401).send({ error: 'No token provided' });
-    
-    const parts = authHeader.split(' ');
+  // Check if Authorization header exists
+  if (!authHeader) { return res.status(401).send({ error: 'No token provided' }); }
 
-    if(!parts.length === 2) // Check if token has two parts(scheme and hash)
-        return res.status(401).send({ error: 'Token schema error'});
+  const parts = authHeader.split(' ');
 
-    const[scheme, token] = parts;
+  // Check if token has two parts(scheme and hash)
+  if (!parts.length === 2) { return res.status(401).send({ error: 'Token schema error' }); }
 
-    if(!/^Bearer$/i.test(scheme)) // Check if scheme has the string "Bearer"
-        return res.status(401).send({ error: 'Token malformatted' })
+  const [scheme, token] = parts;
 
-    jwt.verify(token, authConfig.secret, (err, decoded) => {
-        if(err) return res.status(401).send({ error: 'Invalid token'});
+  // Check if scheme has the string "Bearer"
+  if (!/^Bearer$/i.test(scheme)) { return res.status(401).send({ error: 'Token malformatted' }); }
 
-        req.userId = decoded.id;
-        return next();
-    })
-}
+  jwt.verify(token, authConfig.secret, (err, decoded) => {
+    if (err) return res.status(401).send({ error: 'Invalid token' });
+
+    req.userId = decoded.id;
+    return next();
+  });
+};
